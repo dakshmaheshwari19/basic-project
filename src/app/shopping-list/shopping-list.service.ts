@@ -16,5 +16,12 @@ addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
     this.IngredientsChanged.emit(this.ingredients.slice());
   }
+addIngredients(ingredients: Ingredient[]){
+    // for(let ingredient of ingredients){
+    //     this.addIngredient(ingredient);
+    // }
 
+    this.ingredients.push(...ingredients);  //some kind of operator to convert array of elements to list of elements
+    this.IngredientsChanged.emit(this.ingredients.slice());
+}
 }
